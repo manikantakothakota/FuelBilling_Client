@@ -1,0 +1,13 @@
+p{
+    font-style: italic;
+    color: slateblue;
+    font-size: initial;
+}
+
+
+  th, td {
+    padding: 5px;
+  }
+  th {
+    text-align: left;
+  }

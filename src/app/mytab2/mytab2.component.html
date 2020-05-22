@@ -1,0 +1,36 @@
+<div class="container">
+
+    fuel in lts :<input type="number" [(ngModel)]="fuel">
+    <br>
+    price per lts :<input type="number" [(ngModel)]="price">
+    <br>
+    <button  (click)='calculate()'class="btn btn-success">calculate</button>
+    <button (click)='add()' *ngIf="isNew" [disabled]="isdisable == true"class="btn btn-primary">add</button>
+    <button (click)='update()' *ngIf="!isNew" [disabled]="isdisable == true" class="btn btn-success">update</button>
+
+    <p>Total Price:{{this.total }} </p>
+
+    <h1 style="text-align:center;">Fuel Data</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>No of Ltrs</th>
+                <th>Cost per Ltr</th>
+                <th>Total Cost</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fuel of fuellist">
+                <td>{{fuel.id}}</td>
+                <td>{{fuel.fuel}}</td>
+                <td>{{fuel.price}}</td>
+                <td>{{fuel.total}}</td>
+                <td><button (click)='edit(fuel)' class="btn btn-success">Edit</button></td>
+                <td><button (click)='delete(fuel.id)' class="btn btn-success">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
